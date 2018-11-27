@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="ejs.js"></script>
   <% include ../partials/header.ejs %>
 </head>
 
@@ -11,7 +12,7 @@
 <div class="container">
 <h2>Database Results</h2>
 
-<% var funcLib = require('funcLib.js') %>
+<script> var funcLib = require('funcLib.js') </script>
 
 <select id ="letter_type" onchange="funcLib.updatePrice()">
     <option value=1>Letters (Stamped)</option>
