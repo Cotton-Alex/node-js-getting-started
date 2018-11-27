@@ -2,7 +2,6 @@
 <html>
 <head>
   <% include ../partials/header.ejs %>
-  <% var funcLib = require('funcLib'); %>
 </head>
 
 <body>
@@ -20,7 +19,7 @@
 </script> -->
 <!-- <script> -->
 
-
+<% const funcLib = require('./funcLib.js'); %>
 <select id ="letter_type" onchange="funcLib.updatePrice()">
     <option value=1>Letters (Stamped)</option>
     <option value=2>Letters (Metered)</option>
