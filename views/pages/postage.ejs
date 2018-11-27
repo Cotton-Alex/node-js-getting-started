@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% include ../partials/header.ejs %>
+<% include ../partials/header.ejs %>
+<% require('../pages/funcLib.js'); %>
 </head>
 
 <body>
-
 <% include ../partials/nav.ejs %>
 
 <div class="container">
 <h2>Database Results</h2>
-
-<% var funcLib = require('../pages/funcLib.js') %>
+<% require('../pages/funcLib.js'); %>
 
 <select id ="letter_type" onchange="funcLib.updatePrice()">
     <option value=1>Letters (Stamped)</option>
