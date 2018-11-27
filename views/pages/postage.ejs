@@ -2,7 +2,7 @@
 <html>
 <head>
   <% include ../partials/header.ejs %>
-  <% var indexFunc = require("../index.js"); %>
+  <% var funcLib = require("functions.js"); %>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
 <!-- <script> -->
 
 
-<select id ="letter_type" onchange="updatePrice()">
+<select id ="letter_type" onchange="funcLib.updatePrice()">
     <option value=1>Letters (Stamped)</option>
     <option value=2>Letters (Metered)</option>
     <option value=3>Postcard</option>
@@ -29,7 +29,7 @@
     <option value=5>First-Class Package Service - Retail</option>
     <option value=6>Keys and Identification Devices</option>
 </select>	
-<select id="letter_ounce" onchange="updatePrice()">
+<select id="letter_ounce" onchange="funcLib.updatePrice()">
     <option value=1>less than 1 ounce</option>
     <option value=2>less than 2 ounces</option>
     <option value=3>less than 3 ounces</option>
