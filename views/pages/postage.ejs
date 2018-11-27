@@ -2,7 +2,6 @@
 <html>
 <head>
   <% include ../partials/header.ejs %>
-  <!-- <% var funcLib = require('./index.js') %> -->
 </head>
 
 <body>
@@ -11,15 +10,8 @@
 
 <div class="container">
 <h2>Database Results</h2>
-<!-- <%var results_stringify = (JSON.stringify(results));%>
-<%console.log(results_stringify);%>
-<%var results_parse = (JSON.parse(results_stringify));%>
-<%console.log(results_parse);%> -->
-<!-- <script>
-	var cost = 50;
-</script> -->
-<!-- <script> -->
 
+<% var funcLib = require('./pages/funcLib.js') %>
 
 <select id ="letter_type" onchange="funcLib.updatePrice()">
     <option value=1>Letters (Stamped)</option>
