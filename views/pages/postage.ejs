@@ -2,6 +2,7 @@
 <html>
 <head>
   <% include ../partials/header.ejs %>
+  <% var indexFunc = require("./index.js"); %>
 </head>
 
 <body>
@@ -18,33 +19,9 @@
 	var cost = 50;
 </script>
 <!-- <script> -->
-<%
-	updatePrice = function(){
-		var letter_type_val = document.getElementById("letter_type").value;
-		var letter_ounce_val = document.getElementById("letter_ounce").value;
-		console.log(letter_type_val);
-		console.log(letter_ounce_val);
-		const express = require('express')
-		const path = require('path')
-		const { Pool } = require('pg');
-		const pool = new Pool({
-		  connectionString: process.env.DATABASE_URL,
-		  ssl: true
-		});
-		// const { Pool } = require('pg')
-		// const pool = new Pool()
-		const cost = pool.query('SELECT price FROM postage WHERE postage_name_id = ' + letter_type_val + ' and max_weight = ' + letter_ounce_val, [1], (err, res) => {
-		  if (err) {
-		    throw err
-		  }
-		  console.log('user:', res.rows[0])
-		})
-		console.log(cost)
-	};
-%>
-// </script>
 
-<select id ="letter_type" onchange=updatePrice()>
+
+<select id ="letter_type" onchange="updatePrice()">
     <option value=1>Letters (Stamped)</option>
     <option value=2>Letters (Metered)</option>
     <option value=3>Postcard</option>
@@ -52,7 +29,7 @@
     <option value=5>First-Class Package Service - Retail</option>
     <option value=6>Keys and Identification Devices</option>
 </select>	
-<select id="letter_ounce" onchange=updatePrice()>
+<select id="letter_ounce" onchange="updatePrice()">
     <option value=1>less than 1 ounce</option>
     <option value=2>less than 2 ounces</option>
     <option value=3>less than 3 ounces</option>
