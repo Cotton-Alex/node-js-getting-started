@@ -2,7 +2,13 @@
 <html>
 <head>
 <% include ../partials/header.ejs %>
-<script> var funcLib = require("../pages/funcLib.js"); </script>
+<!-- <script> var funcLib = require("../pages/funcLib.js"); </script> -->
+<% function updatePrice(){
+  var letter_type_val = document.getElementById("letter_type").value;
+  var letter_ounce_val = document.getElementById("letter_ounce").value;
+  console.log(letter_type_val);
+  console.log(letter_ounce_val);
+} %>
 </head>
 
 <body>
@@ -11,7 +17,7 @@
 <div class="container">
 <h2>Database Results</h2>
 
-<select id ="letter_type" onchange="funcLib.updatePrice()">
+<select id ="letter_type" onchange="updatePrice()">
     <option value=1>Letters (Stamped)</option>
     <option value=2>Letters (Metered)</option>
     <option value=3>Postcard</option>
@@ -19,7 +25,7 @@
     <option value=5>First-Class Package Service - Retail</option>
     <option value=6>Keys and Identification Devices</option>
 </select>	
-<select id="letter_ounce" onchange="funcLib.updatePrice()">
+<select id="letter_ounce" onchange="updatePrice()">
     <option value=1>less than 1 ounce</option>
     <option value=2>less than 2 ounces</option>
     <option value=3>less than 3 ounces</option>
