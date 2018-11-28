@@ -12,6 +12,7 @@ function updatePrice(){
     console.log(letter_type_val);
     console.log(letter_ounce_val);
 
+    <% 
     const express = require('express')
     const path = require('path')
     const { Pool } = require('pg');
@@ -23,8 +24,8 @@ function updatePrice(){
     console.log("01");
     express()
         try {
-          <% const client = await pool.connect()
-          const result = await client.query('SELECT price FROM postage WHERE postage_name_id = ' + letter_type + ' and max_weight = ' + letter_ounce + ';'); %>
+          const client = await pool.connect()
+          const result = await client.query('SELECT price FROM postage WHERE postage_name_id = ' + letter_type + ' and max_weight = ' + letter_ounce + ';'); 
           // const results = { 'results': (result) ? result.rows : null};
           // res.render('pages/postage', results );
           client.release();
@@ -33,6 +34,7 @@ function updatePrice(){
           console.error(err);
           res.send("Error " + err);
         }
+        %>
 }
 
 </script>
